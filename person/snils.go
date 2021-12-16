@@ -4,7 +4,6 @@ package person
 
 import (
 	"fmt"
-	"math/rand"
 	number "rufaker/common"
 	"strconv"
 )
@@ -21,8 +20,15 @@ func (t snils) fromated() string {
 func Snils() (snils, error) {
 
 	var snilsNum string
-	var numsSum int
-	randomString := shuffleChar(strconv.Itoa(int(number.PositeiveIntN(9))))
+	var crc int
+
+	randomNumber, err := number.PositiveIntN(9)
+
+	if err != nil {
+		return snils(""), fmt.Errorf("rufaker/person Snils: %s", err.Error())
+	}
+
+	randomString := strconv.Itoa(randomNumber)
 	for k := 9; k >= 1; k-- {
 
 		n, err := strconv.Atoi(string(randomString[9-k]))
@@ -31,25 +37,15 @@ func Snils() (snils, error) {
 			return snils(""), fmt.Errorf("rufaker/person Snils: error - %s", err.Error())
 		}
 
-		numsSum += k * n
+		crc += k * n
 		snilsNum = snilsNum + (strconv.Itoa(n))
 	}
-	if numsSum < 100 {
-		snilsNum = snilsNum + fmt.Sprintf("%02d", numsSum)
-	} else if numsSum <= 101 {
+	if crc < 100 {
+		snilsNum = snilsNum + fmt.Sprintf("%02d", crc)
+	} else if crc <= 101 {
 		snilsNum = snilsNum + "00"
 	} else {
-		snilsNum = snilsNum + fmt.Sprintf("%02d", numsSum%101)
+		snilsNum = snilsNum + fmt.Sprintf("%02d", crc%101)
 	}
 	return snils(snilsNum), nil
-}
-
-func shuffleChar(s string) string {
-	output := make([]byte, len(s))
-	for i := len(s) - 1; i > 0; i-- {
-		j := rand.Intn(i + 1)
-		output[i], output[j] = s[j], s[i]
-	}
-
-	return string(output)
 }
