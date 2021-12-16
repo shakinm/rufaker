@@ -1,5 +1,6 @@
 # rufaker
 ### Генератор случайных данных
+[![Build Status](https://app.travis-ci.com/shakinm/rufaker.svg?branch=main)](https://app.travis-ci.com/shakinm/rufaker)
 
 # Требования
  Версия **go 1.17.0** или выше 
