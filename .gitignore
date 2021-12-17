@@ -1,3 +1,5 @@
 .vscode
 .idea
 todo.md
+coverage.txt
+bin
