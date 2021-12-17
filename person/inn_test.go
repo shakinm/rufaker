@@ -1,7 +1,6 @@
 package person
 
 import (
-	"fmt"
 	"strconv"
 	"testing"
 
@@ -18,21 +17,18 @@ func TestInn(t *testing.T) {
 			assert.True(t, validateInn(inn12(v)))
 		}
 	})
-	t.Run("Проверка генерации 12 значного ИНН", func(t *testing.T) {	
+	t.Run("Проверка генерации 12 значного ИНН", func(t *testing.T) {
 		assert.True(t, validateInn(Inn()))
 	})
 }
- 
+
 func validateInn(v inn12) bool {
-	fmt.Println(v)
 	var k1 = [10]int{7, 2, 4, 10, 3, 5, 9, 4, 6, 8}
 	var k2 = [11]int{3, 7, 2, 4, 10, 3, 5, 9, 4, 6, 8}
 
 	var numsInn [12]int
 
 	for i := 0; i <= 11; i++ {
-		fmt.Println(i)
-		fmt.Println(string(v[i]))
 		n, err := strconv.Atoi(string(v[i]))
 		if err != nil {
 			return false
