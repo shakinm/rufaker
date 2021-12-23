@@ -189,7 +189,7 @@ func LastName() string {
 	return LastNameFemale()
 }
 
-// FullName Случайные ФИО, мужское/женское
+// RandomFullName Случайные ФИО, мужское/женское
 func RandomFullName() FullName {
 
 	if randomBoolean() {
