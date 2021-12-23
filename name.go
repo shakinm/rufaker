@@ -1,5 +1,6 @@
 package rufaker
 
+//FullName Полное имя (Фамилия Имя Отчество)
 type FullName struct {
 	firstName  string
 	middleName string

@@ -14,15 +14,15 @@ func TestInn(t *testing.T) {
 		}
 
 		for _, v := range testInn {
-			assert.True(t, validateInn(Inn12(v)))
+			assert.True(t, validateInn(Inn(v)))
 		}
 	})
 	t.Run("Проверка генерации 12 значного ИНН", func(t *testing.T) {
-		assert.True(t, validateInn(Inn()))
+		assert.True(t, validateInn(PersonInn()))
 	})
 }
 
-func validateInn(v Inn12) bool {
+func validateInn(v Inn) bool {
 	var k1 = [10]int{7, 2, 4, 10, 3, 5, 9, 4, 6, 8}
 	var k2 = [11]int{3, 7, 2, 4, 10, 3, 5, 9, 4, 6, 8}
 

@@ -9,10 +9,11 @@ import (
 var k1 = [10]int{7, 2, 4, 10, 3, 5, 9, 4, 6, 8}
 var k2 = [11]int{3, 7, 2, 4, 10, 3, 5, 9, 4, 6, 8}
 
-type Inn12 string
+// Inn ИНН, 12 знаков для физических лиц и 11 для юридических
+type Inn string
 
 // Inn Генерирует ИНН физического лица (12 знаков)
-func Inn() Inn12 {
+func PersonInn() Inn {
 
 	rand.Seed(time.Now().UnixNano())
 
@@ -24,7 +25,7 @@ func Inn() Inn12 {
 	for i := 0; i <= 11; i++ {
 		str = str + strconv.Itoa(randomNumber[i])
 	}
-	return Inn12(str)
+	return Inn(str)
 }
 
 func calculateCRC1(num []int) (crc int) {

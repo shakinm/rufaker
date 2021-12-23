@@ -5,6 +5,7 @@ import (
 	"strconv"
 )
 
+// Snils Страховой номер индивидуального лицевого счёта (СНИЛС)
 type Snils string
 
 // fromated вывод текущего значения в формате ХХХ-ХХХ-ХХХ-YY
@@ -13,7 +14,7 @@ func (t Snils) fromated() string {
 	return fmt.Sprintf("%s-%s-%s-%s", s[:3], s[3:6], s[6:9], s[9:])
 }
 
-// Snils Генерирует случайный СНИЛС
+// PersonSnils Генерирует случайный СНИЛС
 func PersonSnils() (Snils, error) {
 
 	var snilsNum string
