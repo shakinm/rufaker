@@ -1,10 +1,7 @@
-// Пакет предоставляет инструменты для генерации данных связанных
-// с персональной информацией о человеке
-package person
+package rufaker
 
 import (
 	"fmt"
-	number "rufaker/common"
 	"strconv"
 )
 
@@ -22,7 +19,7 @@ func Snils() (snils, error) {
 	var snilsNum string
 	var crc int
 
-	randomNumber, err := number.PositiveIntN(9)
+	randomNumber, err := PositiveIntN(9)
 
 	if err != nil {
 		return snils(""), fmt.Errorf("rufaker/person Snils: %s", err.Error())

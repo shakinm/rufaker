@@ -1,12 +1,9 @@
-// Пакет предоставляет функции генерации случайных значений для общих типов
-package number
+package rufaker
 
 import (
 	"fmt"
 	"math"
-	"math/rand"
 	"strconv"
-	"time"
 )
 
 // PositiveIntN Генерирует случайное положительное число, параметр n - разрядность числа.
@@ -27,27 +24,4 @@ func PositiveIntN(n int) (result int, err error) {
 	}
 
 	return result, nil
-}
-
-func randInt10(min int, seed int) int {
-	rand.Seed(time.Now().UnixNano() + int64(seed))
-	return min + rand.Intn(9-min)
-}
-
-func pow10n(n int) int {
-	b := 10
-
-	if n == 0 {
-		return 1
-	}
-
-	if n == 1 {
-		return b
-	}
-
-	for i := 0; i <= n-2; i++ {
-		b = b * 10
-	}
-
-	return b
 }

@@ -1,4 +1,4 @@
-package person
+package rufaker
 
 import (
 	"math/rand"
