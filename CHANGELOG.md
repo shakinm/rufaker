@@ -6,6 +6,24 @@
 
 ## [Новое]
 
+## [v0.3.0] - 2021-12-23
+### Добавлено
+- Добавлены методы:
+  - FirstNameMale Мужское им
+  - FirstNameFemale Женское имя
+  - MiddleNameMale Мужское отчество
+  - MiddleNameFemale  Женское отчество
+  - LastNameMale Мужская фамилия
+  - LastNameFemale Женская фамилия
+  - FullNameMale Мужские ФИО
+  - FullNameFemale Женские ФИО
+  - FirstName Случайное имя
+  - MiddleName Случайное отчество
+  - LastName Случайная фамилия
+  - FullName Случайные ФИО, мужское/женское
+  - Gender Случайны пол
+
+
 ## [v0.2.0] - 2021-12-17
 ### Добавлено
 - Генерация ИНН для физ. лица

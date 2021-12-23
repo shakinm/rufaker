@@ -121,17 +121,17 @@ var lastName = []string{
 
 var genders = []string{"Мужской", "Женский"}
 
-// FirstNameMale - Мужское имя
+// FirstNameMale Мужское имя
 func FirstNameMale() string {
 	return randomElementFromSliceString(firstNamesMale)
 }
 
-// FirstNameFemale - Женское имя
+// FirstNameFemale Женское имя
 func FirstNameFemale() string {
 	return randomElementFromSliceString(firstNamesFemale)
 }
 
-// MiddleNameMale - Мужское отчество
+// MiddleNameMale Мужское отчество
 func MiddleNameMale() string {
 	return randomElementFromSliceString(middleNamesMale)
 }
@@ -146,12 +146,12 @@ func LastNameMale() string {
 	return randomElementFromSliceString(lastName)
 }
 
-// LastNameFemale- Женская фамилия
+// LastNameFemale Женская фамилия
 func LastNameFemale() string {
 	return randomElementFromSliceString(lastName) + "а"
 }
 
-// FullNameMale - Мужские ФИО
+// FullNameMale Мужские ФИО
 func FullNameMale() fullName {
 	return fullName{
 		firstName:  FirstNameMale(),
@@ -188,7 +188,7 @@ func LastName() string {
 	return LastNameFemale()
 }
 
-// FullName - Случайные ФИО, мужское/женское
+// FullName Случайные ФИО, мужское/женское
 func FullName() fullName {
 
 	if randomBoolean() {
@@ -197,7 +197,7 @@ func FullName() fullName {
 	return FullNameFemale()
 }
 
-// Gender - Случайны пол
+// Gender Случайны пол
 func Gender() string {
 	return randomElementFromSliceString(genders)
 }
