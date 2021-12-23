@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestSnils(t *testing.T) {
+func TestPersonSnils(t *testing.T) {
 	t.Run("Самопроверка валидатора на реальных СНИЛС", func(t *testing.T) {
 		testSnils := []string{
 			"03170525210",
@@ -28,7 +28,7 @@ func TestSnils(t *testing.T) {
 	t.Run("Генерация в формате ХХХ-ХХХ-ХХХ-YY", func(t *testing.T) {
 		fakeSnils, err := PersonSnils()
 		assert.NoError(t, err)
-		assert.NotEmpty(t, fakeSnils.fromated())
+		assert.NotEmpty(t, fakeSnils.Fromated())
 	})
 }
 

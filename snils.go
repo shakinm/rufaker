@@ -8,8 +8,8 @@ import (
 // Snils Страховой номер индивидуального лицевого счёта (СНИЛС)
 type Snils string
 
-// fromated вывод текущего значения в формате ХХХ-ХХХ-ХХХ-YY
-func (t Snils) fromated() string {
+// Fromated вывод текущего значения в формате ХХХ-ХХХ-ХХХ-YY
+func (t Snils) Fromated() string {
 	s := string(t)
 	return fmt.Sprintf("%s-%s-%s-%s", s[:3], s[3:6], s[6:9], s[9:])
 }
