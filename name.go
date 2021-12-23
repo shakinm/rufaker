@@ -1,6 +1,6 @@
 package rufaker
 
-type fullName struct {
+type FullName struct {
 	firstName  string
 	middleName string
 	lastName   string
@@ -152,8 +152,8 @@ func LastNameFemale() string {
 }
 
 // FullNameMale Мужские ФИО
-func FullNameMale() fullName {
-	return fullName{
+func FullNameMale() FullName {
+	return FullName{
 		firstName:  FirstNameMale(),
 		middleName: MiddleNameMale(),
 		lastName:   LastNameMale(),
@@ -161,8 +161,8 @@ func FullNameMale() fullName {
 }
 
 // FullNameFemale Женские ФИО
-func FullNameFemale() fullName {
-	return fullName{
+func FullNameFemale() FullName {
+	return FullName{
 		firstName:  FirstNameFemale(),
 		middleName: MiddleNameFemale(),
 		lastName:   LastNameFemale(),
@@ -189,7 +189,7 @@ func LastName() string {
 }
 
 // FullName Случайные ФИО, мужское/женское
-func FullName() fullName {
+func RandomFullName() FullName {
 
 	if randomBoolean() {
 		return FullNameMale()

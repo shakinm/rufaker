@@ -9,12 +9,12 @@ import (
 
 func TestInn(t *testing.T) {
 	t.Run("Самопроверка валидатора на реальных ИНН", func(t *testing.T) {
-		var testInn []string = []string{
+		testInn := []string{
 			"500100732259",
 		}
 
 		for _, v := range testInn {
-			assert.True(t, validateInn(inn12(v)))
+			assert.True(t, validateInn(Inn12(v)))
 		}
 	})
 	t.Run("Проверка генерации 12 значного ИНН", func(t *testing.T) {
@@ -22,7 +22,7 @@ func TestInn(t *testing.T) {
 	})
 }
 
-func validateInn(v inn12) bool {
+func validateInn(v Inn12) bool {
 	var k1 = [10]int{7, 2, 4, 10, 3, 5, 9, 4, 6, 8}
 	var k2 = [11]int{3, 7, 2, 4, 10, 3, 5, 9, 4, 6, 8}
 

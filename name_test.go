@@ -45,7 +45,7 @@ func TestName(t *testing.T) {
 		assert.True(t, hasElementSliceString(middleNames, MiddleName()))
 	})
 	t.Run("Генерация случайных ФИО", func(t *testing.T) {
-		fn := FullName()
+		fn := RandomFullName()
 		assert.True(t, hasElementSliceString(firstNames, fn.firstName))
 		assert.True(t, hasElementSliceString(middleNames, fn.middleName))
 	})

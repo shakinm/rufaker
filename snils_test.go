@@ -9,7 +9,7 @@ import (
 
 func TestSnils(t *testing.T) {
 	t.Run("Самопроверка валидатора на реальных СНИЛС", func(t *testing.T) {
-		var testSnils []string = []string{
+		testSnils := []string{
 			"03170525210",
 			"81361336680",
 			"17268189000",
@@ -17,22 +17,22 @@ func TestSnils(t *testing.T) {
 		}
 
 		for _, v := range testSnils {
-			assert.True(t, validateSnils(snils(v)))
+			assert.True(t, validateSnils(Snils(v)))
 		}
 	})
 	t.Run("Генерация 11 значного числа", func(t *testing.T) {
-		fakeSnils, err := Snils()
+		fakeSnils, err := PersonSnils()
 		assert.NoError(t, err)
 		assert.True(t, validateSnils(fakeSnils))
 	})
 	t.Run("Генерация в формате ХХХ-ХХХ-ХХХ-YY", func(t *testing.T) {
-		fakeSnils, err := Snils()
+		fakeSnils, err := PersonSnils()
 		assert.NoError(t, err)
 		assert.NotEmpty(t, fakeSnils.fromated())
 	})
 }
 
-func validateSnils(v snils) bool {
+func validateSnils(v Snils) bool {
 
 	crc, err := strconv.Atoi(string(v[9:]))
 
