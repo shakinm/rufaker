@@ -1,4 +1,4 @@
-module rufaker
+module github.com/shakinm/rufaker
 
 go 1.17
 

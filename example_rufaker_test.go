@@ -2,7 +2,8 @@ package rufaker_test
 
 import (
 	"fmt"
-	"rufaker"
+
+	"github.com/shakinm/rufaker"
 )
 
 func Example_fakeData() {
